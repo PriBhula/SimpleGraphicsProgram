@@ -19,13 +19,12 @@ public abstract class Entity {
 	}
 
 	public void move(long delta) {
-		// TODO Auto-generated method stub
-		
+		x += (delta*dx)/1000;
+		y += (delta*dy)/1000;
 	}
 
-	public void draw(Graphics2D gr) {
-		// TODO Auto-generated method stub
-		
+	public void draw(Graphics gr) {
+		sprite.drawSprite(gr,(int)x,(int)y);	
 	}
 
 }

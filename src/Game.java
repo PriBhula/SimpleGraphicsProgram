@@ -74,7 +74,17 @@ public class Game extends Canvas{
 	}
 	
 	private void initEntities() {
-				
+		ship = new ShipEntity(this, "ship.jpg", 370, 550);
+		entities.add(ship);
+		
+		alienCount=0;
+		for(int row=0;row<5;row++) {
+			for (int col=0;col<12;col++) {
+				Entity alien = new AlienEntity(this, "alien.jpg", 100+(col*50),100+(row*50));
+				entities.add(alien);
+				alienCount++;
+			}
+		}
 	}
 	
 	public void gameloop() {
