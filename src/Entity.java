@@ -17,4 +17,9 @@ public abstract class Entity {
 		
 	}
 
+	public void move(long delta) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

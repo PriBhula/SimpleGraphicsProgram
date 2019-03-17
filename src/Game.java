@@ -78,7 +78,22 @@ public class Game extends Canvas{
 	}
 	
 	public void gameloop() {
-		
+		long lastLoopTime = System.currentTimeMillis();
+		while(gameRunning) {
+			long delta = System.currentTimeMillis() - lastLoopTime;
+			lastLoopTime = System.currentTimeMillis();
+			
+			Graphics2D gr = (Graphics2D) strategy.getDrawGraphics();
+			gr.setColor(Color.black);
+			gr.fillRect(0, 0, 800, 600);
+			
+			gr.dispose();
+			strategy.show();
+			
+			try {
+				Thread.sleep(10);
+			} catch (Exception e) {}
+		}
 	}
 	
 	private class KeyInputHandler extends KeyAdapter{
