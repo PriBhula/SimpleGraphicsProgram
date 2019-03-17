@@ -121,7 +121,29 @@ public class Game extends Canvas{
 	}
 	
 	private class KeyInputHandler extends KeyAdapter{
+		public void keyPressed(KeyEvent k) {
+			if(k.getKeyCode()==KeyEvent.VK_LEFT) {
+				leftPressed=true;
+			}
+			if(k.getKeyCode()==KeyEvent.VK_RIGHT) {
+				rightPressed=true;
+			}
+			if(k.getKeyCode()==KeyEvent.VK_SPACE) {
+				firePressed=true;
+			}
+		}
 		
+		public void keyReleased(KeyEvent k) {
+			if(k.getKeyCode()==KeyEvent.VK_LEFT) {
+				leftPressed=false;
+			}
+			if(k.getKeyCode()==KeyEvent.VK_RIGHT) {
+				rightPressed=false;
+			}
+			if(k.getKeyCode()==KeyEvent.VK_SPACE) {
+				firePressed=false;
+			}
+		}
 	}
 
 
