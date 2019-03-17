@@ -16,7 +16,7 @@ public class Game extends Canvas{
 	
 	private BufferStrategy strategy;
 	private boolean gameRunning = true;
-	private ArrayList entities = new ArrayList();
+	private ArrayList<Entity> entities = new ArrayList<Entity>();
 	private ArrayList removeList = new ArrayList();
 	private Entity ship;
 	private double moveSpeed = 300;
@@ -86,6 +86,16 @@ public class Game extends Canvas{
 			Graphics2D gr = (Graphics2D) strategy.getDrawGraphics();
 			gr.setColor(Color.black);
 			gr.fillRect(0, 0, 800, 600);
+			
+			for (int i=0;i<entities.size();i++) {
+				Entity e = entities.get(i);
+				e.move(delta);
+			}
+			
+			for (int i=0;i<entities.size();i++) {
+				Entity e = entities.get(i);
+				e.draw(gr);
+			}
 			
 			gr.dispose();
 			strategy.show();

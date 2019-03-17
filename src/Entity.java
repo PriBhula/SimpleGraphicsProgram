@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 public abstract class Entity {
@@ -18,6 +19,11 @@ public abstract class Entity {
 	}
 
 	public void move(long delta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void draw(Graphics2D gr) {
 		// TODO Auto-generated method stub
 		
 	}
