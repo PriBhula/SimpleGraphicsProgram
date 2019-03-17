@@ -17,7 +17,7 @@ public class Game extends Canvas{
 	private BufferStrategy strategy;
 	private boolean gameRunning = true;
 	private ArrayList<Entity> entities = new ArrayList<Entity>();
-	private ArrayList removeList = new ArrayList();
+	private ArrayList <Entity>toRemove = new ArrayList<Entity>();
 	private Entity ship;
 	private double moveSpeed = 300;
 	private long lastFire = 0;
@@ -87,6 +87,10 @@ public class Game extends Canvas{
 		}
 	}
 	
+	public void removeEntity(Entity e) {
+		toRemove.add(e);
+	}
+	
 	public void gameloop() {
 		long lastLoopTime = System.currentTimeMillis();
 		while(gameRunning) {
@@ -124,6 +128,11 @@ public class Game extends Canvas{
 	public static void main(String[] args) {
 		Game g = new Game();
 		g.gameloop();
+	}
+
+	public void updateGame() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

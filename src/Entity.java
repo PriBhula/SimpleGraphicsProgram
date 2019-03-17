@@ -3,6 +3,8 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 public abstract class Entity {
+	
+
 	protected double x;
 	protected double y;
 	
